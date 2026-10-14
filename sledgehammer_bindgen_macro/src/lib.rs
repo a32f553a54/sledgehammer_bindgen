@@ -713,7 +713,7 @@ impl Bindings {
                         self.update_metadata_ptrs();
                         #(#pre_run_rust)*
 
-                        let new_mem_size = core::arch::wasm32::memory_size(0);
+                        let new_mem_size = core::arch::wasm::memory_size(0);
                         // we need to update the memory if the memory has grown
                         if new_mem_size != self.last_mem_size {
                             self.last_mem_size = new_mem_size;
